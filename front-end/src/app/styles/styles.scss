@@ -1,0 +1,135 @@
+:root {
+  // Background Color
+  --bg-color: hsl(0, 0%, 4%);
+
+  // Surface Colors
+  --surface-color: hsl(0, 0%, 17%);
+  --card-hover-color: hsl(0, 0%, 4%);
+  --card-interior-color: hsl(0, 0%, 17%);
+
+  // Border Colors
+  --border-color: hsl(0, 0%, 7%);
+  --border-color-hover: hsl(0, 0%, 11%);
+
+  //Button Colors
+  --button-primary-color: hsl(0, 0%, 9%);
+
+  // Font Colors
+  --body-font-color: hsl(0, 0%, 82%);
+  --body-font-color-muted: hsl(0, 0%, 52%);
+
+  --header-font-color: hsl(0, 0%, 100%);
+  --header-secondary-font-color: hsl(0, 0%, 93%);
+
+  // Font Family
+  --font-family: 'Inter', sans-serif;
+
+  // Font Sizes
+  --h1-font-size: 24px;
+  --h2-font-size: 20px;
+  --h3-font-size: 14px;
+  --body-font-size: 14px;
+  --body-font-size-lg: 16px;
+  --body-font-size-sm: 10px;
+
+  // Font Weights
+  --weight-rg: 400;
+  --weight-md: 500;
+  --weight-sb: 600;
+  --weight-bd: 700;
+
+  // Letter Spacing
+  --header-letter-spacing: -2%;
+  --nav-label-letter-spacing: 4%;
+
+  // Line Heights
+  --header-line-height: 110%;
+  --body-line-height-rg: 140%;
+  --body-line-height-sm: 120%;
+  --nav-line-height: 120%;
+
+  // Border radius
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 24px;
+
+  // Button Sizes
+  --button-height-sm: 32px;
+  --button-height-md: 40px;
+  --button-height-lg: 48px;
+
+  // Sidebar Sizes
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 64px;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  button {
+    font-family: var(--body-font-family);
+  }
+
+  body {
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height-rg);
+    color: var(--body-font-color);
+    background-color: var(--bg-color);
+  }
+
+  h1 {
+    font-family: var(--font-family);
+    font-size: var(--h1-font-size);
+    line-height: var(--header-line-height);
+    color: var(--header-font-color);
+    font-weight: var(--weight-lg);
+    letter-spacing: var(--header-letter-spacing);
+  }
+
+  h2 {
+    font-family: var(--font-family);
+    font-size: var(--h2-font-size);
+    line-height: var(--header-line-height);
+    color: var(--header-font-color);
+    font-weight: var(--weight-lg);
+    letter-spacing: var(--header-letter-spacing);
+  }
+
+  h3 {
+    font-family: var(--font-family);
+    font-size: var(--h3-font-size);
+    line-height: var(--header-line-height);
+    color: var(--header-secondary-font-color);
+    font-weight: var(--weight-md);
+    letter-spacing: var(--header-letter-spacing);
+  }
+
+  p {
+    margin: 0;
+    line-height: var(--body-line-height-rg);
+    font-weight: var(--weight-rg);
+  }
+
+  button {
+    appearance: none;
+    border: none;
+    background: none;
+    color: var(--button-primary-color);
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    letter-spacing: var(--header-letter-spacing);
+    line-height: var(--body-line-height-sm);
+    font-weight: var(--weight-md);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
