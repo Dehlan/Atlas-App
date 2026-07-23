@@ -1,0 +1,23 @@
+@mixin button-base {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	appearance: none;
+	border: none;
+	background: none;
+	padding: 8px;
+	border-radius: 6px;
+	border-color: var(--border-color);
+	font-family: var(--body-font-family);
+	color: var(--btn-font-color);
+}
+
+:host {
+	@include button-base;
+
+	&.disabled {
+		pointer-events: none;
+		opacity: 0.8;
+	}
+}

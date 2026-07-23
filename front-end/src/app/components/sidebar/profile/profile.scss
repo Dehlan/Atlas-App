@@ -1,0 +1,31 @@
+.profile-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;	
+	padding: 8px;
+
+	.username-container {
+		display: flex;
+		gap: 6px;
+
+		.avatar {
+			width: 32px;
+			height: 32px;
+			border-radius: 100%;
+		}
+
+		.user-info {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+
+			p {
+				font-size: var(--body-font-size-sm);
+			}
+		}
+	}
+
+	svg{
+		color: var(--btn-font-color);
+	}
+}

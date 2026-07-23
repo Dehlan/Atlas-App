@@ -17,6 +17,8 @@
   // Font Colors
   --body-font-color: hsl(0, 0%, 82%);
   --body-font-color-muted: hsl(0, 0%, 52%);
+  
+  --btn-font-color: hsl(0, 0%, 100%);
 
   --header-font-color: hsl(0, 0%, 100%);
   --header-secondary-font-color: hsl(0, 0%, 93%);
@@ -82,6 +84,7 @@
     line-height: var(--body-line-height-rg);
     color: var(--body-font-color);
     background-color: var(--bg-color);
+    font-weight: var(--weight-rg);
   }
 
   h1 {
@@ -91,6 +94,7 @@
     color: var(--header-font-color);
     font-weight: var(--weight-lg);
     letter-spacing: var(--header-letter-spacing);
+    margin: 0;
   }
 
   h2 {
@@ -100,6 +104,7 @@
     color: var(--header-font-color);
     font-weight: var(--weight-lg);
     letter-spacing: var(--header-letter-spacing);
+    margin: 0;
   }
 
   h3 {
@@ -109,6 +114,7 @@
     color: var(--header-secondary-font-color);
     font-weight: var(--weight-md);
     letter-spacing: var(--header-letter-spacing);
+    margin: 0;
   }
 
   p {
