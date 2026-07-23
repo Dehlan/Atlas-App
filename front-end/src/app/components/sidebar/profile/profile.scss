@@ -1,8 +1,17 @@
 .profile-container {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;	
+	justify-content: space-between;
 	padding: 8px;
+	border: 1px solid transparent;
+	box-sizing: border-box;
+	border-radius: var(--border-radius-sm);
+
+	&:hover {
+		cursor: pointer;
+		background-color: var(--btn-primary-color);
+		border-color: var(--border-color);
+	}
 
 	.username-container {
 		display: flex;
@@ -25,7 +34,7 @@
 		}
 	}
 
-	svg{
+	svg {
 		color: var(--btn-font-color);
 	}
 }

@@ -1,23 +1,36 @@
 <div class="button-wrapper">
 	@if (Href() === undefined){
 	<button type="button" (click)="OnClick()" [style.maxWidth]="MaxWidth()" [class.full-width]="FullWidth()"
-		[class.flex]="IsFlex()" [class.primary]="Theme() === 'primary'" [class.secondary]="Theme() === 'secondary'">
+		[class.flex]="IsFlex()" [class.left-middle]="Alignment() === 'left'" [class.primary]="Theme() === 'primary'" [class.secondary]="Theme() === 'secondary'"
+		[class.no-background]="NoBackground()">
+		<div *ngTemplateOutlet="icon"></div>
 		<div *ngTemplateOutlet="content"></div>
 	</button>
 	} @else {
 	@if (IsRouterLink()){
-	<a [style.maxWidth]="MaxWidth()" [class.full-width]="FullWidth()" [class.flex]="IsFlex()" [routerLink]="Href()"
-		[class.primary]="Theme() === 'primary'" [class.secondary]="Theme() === 'secondary'">
+	<a [style.maxWidth]="MaxWidth()" [class.full-width]="FullWidth()" [class.flex]="IsFlex()" [class.left-middle]="Alignment() === 'left'" [routerLink]="Href()"
+		[class.primary]="Theme() === 'primary'" [class.secondary]="Theme() === 'secondary'" [class.no-background]="NoBackground()">
+		<div *ngTemplateOutlet="icon"></div>
 		<div *ngTemplateOutlet="content"></div>
 	</a>
 	} @else {
-	<a [style.maxWidth]="MaxWidth()" [class.full-width]="FullWidth()" [class.flex]="IsFlex()" [attr.href]="Href()"
-		[class.primary]="Theme() === 'primary'" [class.secondary]="Theme() === 'secondary'">
+	<a [style.maxWidth]="MaxWidth()" [class.full-width]="FullWidth()" [class.flex]="IsFlex()" [class.left-middle]="Alignment() === 'left'" [attr.href]="Href()"
+		[class.primary]="Theme() === 'primary'" [class.secondary]="Theme() === 'secondary'" [class.no-background]="NoBackground()">
+		<div *ngTemplateOutlet="icon"></div>
 		<div *ngTemplateOutlet="content"></div>
 	</a>
 	}
 	}
 </div>
+<ng-template #icon>
+	@if (IconPath(); as iconPath) {
+	<svg class="button-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+		xmlns="http://www.w3.org/2000/svg">
+		<path [attr.d]="iconPath" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+			stroke-linejoin="round" />
+	</svg>
+	}
+</ng-template>
 <ng-template #content>
 	<ng-content></ng-content>
 </ng-template>

@@ -1,10 +1,64 @@
 <div class="sidebar-container">
 	<div class="content-container">
-		<div class="profile-menu-container">
-			<app-profile></app-profile>
+		<div class="upper-container">
+			<div class="profile-menu-container">
+				<app-profile></app-profile>
+			</div>
+			<div class="nav-links-container">
+				<div class="nav-section">
+					<p>MENU</p>
+					<div class="nav-links">
+						<app-button Theme="primary" Icon="home" [Href]="'#'" [IsFlex]="true" [FullWidth]="true"
+							[Alignment]="'left'">
+							Home
+						</app-button>
+						<app-button Theme="primary" Icon="projects" [Href]="'#'" [IsFlex]="true" [FullWidth]="true"
+							[NoBackground]="true" [Alignment]="'left'">
+							Projects
+						</app-button>
+						<app-button Theme="primary" Icon="tasks" [Href]="'#'" [IsFlex]="true" [FullWidth]="true"
+							[NoBackground]="true" [Alignment]="'left'">
+							Tasks
+						</app-button>
+						<app-button Theme="primary" Icon="calendar" [Href]="'#'" [IsFlex]="true" [FullWidth]="true"
+							[NoBackground]="true" [Alignment]="'left'">
+							Calendar
+						</app-button>
+						<app-button Theme="primary" Icon="team" [Href]="'#'" [IsFlex]="true" [FullWidth]="true"
+							[NoBackground]="true" [Alignment]="'left'">
+							Team
+						</app-button>
+					</div>
+				</div>
+				<div class="nav-section">
+					<p>PROJECTS</p>
+					<div class="nav-links">
+						<app-button Theme="primary" Icon="projects" [Href]="'#'" [IsFlex]="true" [FullWidth]="true"
+							[NoBackground]="true" [Alignment]="'left'">
+							Atlas App
+						</app-button>
+						<app-button Theme="primary" Icon="tasks" [Href]="'#'" [IsFlex]="true" [FullWidth]="true"
+							[NoBackground]="true" [Alignment]="'left'">
+							Design System
+						</app-button>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="nav-links-container">
-			<app-button Theme="primary">Home</app-button>
+		<div class="lower-container">
+			<div class="nav-section">
+				<p>GENERAL</p>
+				<div class="nav-links">
+					<app-button Theme="primary" Icon="settings" [Href]="'#'" [IsFlex]="true" [FullWidth]="true"
+						[NoBackground]="true" [Alignment]="'left'">
+						Settings
+					</app-button>
+					<app-button Theme="primary" Icon="help" [Href]="'#'" [IsFlex]="true" [FullWidth]="true"
+						[NoBackground]="true" [Alignment]="'left'">
+						Help & Support
+					</app-button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

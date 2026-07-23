@@ -8,11 +8,12 @@
   --card-interior-color: hsl(0, 0%, 17%);
 
   // Border Colors
-  --border-color: hsl(0, 0%, 7%);
+  --border-color: hsl(0, 0%, 12%);
   --border-color-hover: hsl(0, 0%, 11%);
 
   //Button Colors
-  --button-primary-color: hsl(0, 0%, 9%);
+  --btn-primary-color: hsl(0, 0%, 9%);
+  --btn-nav-color: hsl(0, 0%, 9%);
 
   // Font Colors
   --body-font-color: hsl(0, 0%, 82%);
@@ -41,8 +42,9 @@
   --weight-bd: 700;
 
   // Letter Spacing
-  --header-letter-spacing: -2%;
-  --nav-label-letter-spacing: 4%;
+  --header-letter-spacing: -0.02em;
+  --btn-letter-spacing: -0.02em;
+  --nav-label-letter-spacing: 0.04em;
 
   // Line Heights
   --header-line-height: 110%;
@@ -59,6 +61,8 @@
   --button-height-sm: 32px;
   --button-height-md: 40px;
   --button-height-lg: 48px;
+  --button-font-weight: var(--weight-md);
+  --button-letter-spacing: var(--btn-letter-spacing);
 
   // Sidebar Sizes
   --sidebar-width: 240px;
@@ -75,7 +79,7 @@
   }
 
   button {
-    font-family: var(--body-font-family);
+    font-family: var(--font-family);
   }
 
   body {
@@ -92,7 +96,7 @@
     font-size: var(--h1-font-size);
     line-height: var(--header-line-height);
     color: var(--header-font-color);
-    font-weight: var(--weight-lg);
+    font-weight: var(--weight-bd);
     letter-spacing: var(--header-letter-spacing);
     margin: 0;
   }
@@ -102,7 +106,7 @@
     font-size: var(--h2-font-size);
     line-height: var(--header-line-height);
     color: var(--header-font-color);
-    font-weight: var(--weight-lg);
+    font-weight: var(--weight-bd);
     letter-spacing: var(--header-letter-spacing);
     margin: 0;
   }
