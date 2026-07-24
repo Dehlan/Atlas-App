@@ -1,1 +1,12 @@
-<p>project-link works!</p>
+@for (proj of Projects(); track proj.Id) {
+<div class="project-link-container">
+	<div class="dot-indicator" [style.backgroundColor]="proj.Color"></div>
+	<div class="project-info">
+		<div class="title-row">
+			<h3>{{ proj.Name }}</h3>
+			<span class="percentage">{{ proj.Progress }}%</span>
+		</div>
+		<app-progress-bar [Progress]="proj.Progress" [Color]="proj.Color"></app-progress-bar>
+	</div>
+</div>
+}
