@@ -1,0 +1,19 @@
+@for (proj of Projects(); track proj.Id) {
+<div class="project-link-container">
+	<div class="dot-indicator" [style.backgroundColor]="proj.Color"></div>
+	<div class="project-info">
+		<div class="title-row">
+			<h3>{{ proj.Name }}</h3>
+			<span
+				class="percentage"
+				ngmMotion
+				[initial]="PercentageInitial"
+				[animate]="PercentageAnimate"
+				[transition]="PercentageTransition">
+				{{ ProgressFor(proj.Id) }}%
+			</span>
+		</div>
+		<app-progress-bar [Progress]="proj.Progress" [Color]="proj.Color"></app-progress-bar>
+	</div>
+</div>
+}

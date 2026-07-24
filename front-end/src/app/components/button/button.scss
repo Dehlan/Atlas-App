@@ -1,0 +1,111 @@
+:host {
+	display: inline-flex;
+	font-weight: var(--button-font-weight);
+	letter-spacing: var(--button-letter-spacing);
+
+	&.full-width {
+		display: block;
+		width: 100%;
+	}
+
+	&.disabled {
+		pointer-events: none;
+		opacity: 0.8;
+	}
+}
+
+.button-wrapper {
+	overflow: hidden;
+
+	button,
+	a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		appearance: none;
+		background: none;
+		white-space: nowrap;
+		overflow: hidden;
+		text-align: center;
+		align-content: center;
+		line-height: normal;
+		vertical-align: middle;
+		text-overflow: ellipsis;
+		padding: 8px;
+		height: 40px;
+		border-radius: var(--border-radius-sm);
+		border: 1px solid var(--border-color);
+		font-family: var(--font-family);
+		font-size: var(--body-font-size);
+		font-weight: var(--button-font-weight);
+		letter-spacing: var(--button-letter-spacing);
+		line-height: var(--body-line-height-sm);
+		color: var(--btn-font-color);
+		background-color: var(--btn-primary-color);
+
+		&:focus-visible {
+			outline: 2px solid var(--btn-font-color);
+			outline-offset: 2px;
+		}
+
+		&:disabled,
+		&[aria-disabled='true'] {
+			cursor: not-allowed;
+		}
+	}
+
+	button > div,
+	a > div {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		min-width: 0;
+	}
+
+	.button-icon {
+		flex: 0 0 auto;
+	}
+
+	button.full-width,
+	a.full-width {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	button.flex,
+	a.flex {
+		display: inline-flex;
+		gap: 6px;
+		align-items: center;
+	}
+
+	button.left-middle,
+	a.left-middle {
+		justify-content: flex-start;
+		text-align: left;
+	}
+
+	.primary {
+		background-color: var(--btn-primary-color);
+		color: var(--btn-font-color);
+		border-color: var(--border-color);
+	}
+
+	.secondary {
+		background-color: var(--surface-color);
+		color: var(--body-font-color);
+		border-color: var(--border-color-hover);
+	}
+
+	.no-background {
+		background-color: transparent;
+		border-color: transparent;
+		color: var(--body-font-color-muted);
+
+		&:hover{
+			color: var(--btn-font-color);
+			cursor: pointer;
+		}
+	}
+}

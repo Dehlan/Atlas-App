@@ -1,0 +1,40 @@
+<div class="button-wrapper">
+	@if (Href() === undefined){
+	<button [type]="Type()" (click)="OnClick()" [style.maxWidth]="MaxWidth()" [class.full-width]="FullWidth()"
+		[class.flex]="IsFlex()" [class.left-middle]="Alignment() === 'left'" [class.primary]="Theme() === 'primary'" [class.secondary]="Theme() === 'secondary'"
+		[class.no-background]="NoBackground()" [disabled]="Disabled()" [attr.aria-label]="AriaLabel()">
+		<div *ngTemplateOutlet="icon"></div>
+		<div *ngTemplateOutlet="content"></div>
+	</button>
+	} @else {
+	@if (IsRouterLink()){
+	<a [style.maxWidth]="MaxWidth()" [class.full-width]="FullWidth()" [class.flex]="IsFlex()" [class.left-middle]="Alignment() === 'left'" [routerLink]="Disabled() ? null : Href()"
+		[class.primary]="Theme() === 'primary'" [class.secondary]="Theme() === 'secondary'" [class.no-background]="NoBackground()"
+		(click)="OnLinkClick($event)" [attr.aria-label]="AriaLabel()"
+		[attr.aria-disabled]="Disabled() ? true : null" [attr.tabindex]="LinkTabIndex()">
+		<div *ngTemplateOutlet="icon"></div>
+		<div *ngTemplateOutlet="content"></div>
+	</a>
+	} @else {
+	<a [style.maxWidth]="MaxWidth()" [class.full-width]="FullWidth()" [class.flex]="IsFlex()" [class.left-middle]="Alignment() === 'left'" [attr.href]="Disabled() ? null : Href()"
+		[class.primary]="Theme() === 'primary'" [class.secondary]="Theme() === 'secondary'" [class.no-background]="NoBackground()"
+		(click)="OnLinkClick($event)" [attr.aria-label]="AriaLabel()"
+		[attr.aria-disabled]="Disabled() ? true : null" [attr.tabindex]="LinkTabIndex()">
+		<div *ngTemplateOutlet="icon"></div>
+		<div *ngTemplateOutlet="content"></div>
+	</a>
+	}
+	}
+</div>
+<ng-template #icon>
+	@if (IconPath(); as iconPath) {
+	<svg class="button-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+		xmlns="http://www.w3.org/2000/svg">
+		<path [attr.d]="iconPath" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+			stroke-linejoin="round" />
+	</svg>
+	}
+</ng-template>
+<ng-template #content>
+	<ng-content></ng-content>
+</ng-template>

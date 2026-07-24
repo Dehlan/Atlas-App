@@ -7,4 +7,25 @@
 .interior-layout {
   height: 100%;
   display: grid;
+  grid-template-columns: minmax(0, 240px) 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0;
+
+  .sidebar-aside {
+    grid-column: 1;
+    grid-row: 1 / -1;
+  }
+
+  .main-content {
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 0 12px 0 12px;
+
+    .topbar-row {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
 }

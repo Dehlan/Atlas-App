@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-import { AppShell } from './pages/app-shell/app-shell';
-import { Home } from './pages/home/home';
 
 export const routes: Routes = [
   {
