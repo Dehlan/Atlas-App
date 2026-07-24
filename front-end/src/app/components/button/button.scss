@@ -43,6 +43,16 @@
 		line-height: var(--body-line-height-sm);
 		color: var(--btn-font-color);
 		background-color: var(--btn-primary-color);
+
+		&:focus-visible {
+			outline: 2px solid var(--btn-font-color);
+			outline-offset: 2px;
+		}
+
+		&:disabled,
+		&[aria-disabled='true'] {
+			cursor: not-allowed;
+		}
 	}
 
 	button > div,

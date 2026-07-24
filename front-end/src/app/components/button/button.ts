@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 export type ButtonTheme = 'primary' | 'secondary' | 'nav';
 export type ButtonSize = 'default' | 'sm' | 'xs';
 export type ButtonAlignment = 'center' | 'left';
+export type ButtonType = 'button' | 'submit' | 'reset';
 export type ButtonIcon = 'home' | 'projects' | 'tasks' | 'calendar' | 'team' | 'settings' | 'help';
 
 const ButtonIconPaths: Record<ButtonIcon, string> = {
@@ -35,6 +36,7 @@ export class Button {
   public readonly IsRouterLink = input<boolean>(true);
   public readonly Theme = input<ButtonTheme>('primary');
   public readonly Size = input<ButtonSize>('default');
+  public readonly Type = input<ButtonType>('button');
   public readonly Disabled = input<boolean>(false);
   public readonly Click = output<void>();
   public readonly FullWidth = input<boolean>(false);
@@ -42,6 +44,7 @@ export class Button {
   public readonly Alignment = input<ButtonAlignment>('center');
   public readonly MaxWidth = input<string | undefined>(undefined);
   public readonly Icon = input<ButtonIcon | undefined>(undefined);
+  public readonly AriaLabel = input<string | undefined>(undefined);
 
   public IconPath(): string | undefined {
     const icon = this.Icon();
@@ -52,5 +55,19 @@ export class Button {
     if (!this.Disabled()) {
       this.Click.emit();
     }
+  }
+
+  public OnLinkClick(event: MouseEvent): void {
+    if (this.Disabled()) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      return;
+    }
+
+    this.Click.emit();
+  }
+
+  public LinkTabIndex(): number | null {
+    return this.Disabled() ? -1 : null;
   }
 }
