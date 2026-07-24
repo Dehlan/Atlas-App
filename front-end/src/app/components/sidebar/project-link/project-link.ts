@@ -11,15 +11,14 @@ import { ProgressBar } from './progress-bar/progress-bar';
   styleUrl: './project-link.scss',
 })
 export class ProjectLink implements OnInit {
-  private ProjectService = inject(ProjectService);
+  private readonly ProjectService = inject(ProjectService);
   private readonly DestroyRef = inject(DestroyRef);
   public readonly Projects = signal<IProjectLink[]>([]);
   public readonly DisplayedProgress = signal<Record<number, number>>({});
   public readonly PercentageInitial: TargetAndTransition = { opacity: 0, y: 4 };
   public readonly PercentageAnimate: TargetAndTransition = { opacity: 1, y: 0 };
   public readonly PercentageTransition: Transition = { duration: 0.45, ease: 'easeOut' };
-
-  private readonly ProgressAnimations: Array<{ stop: () => void }> = [];
+  public readonly ProgressAnimations: { stop: () => void }[] = [];
 
   public ngOnInit() {
     this.ProjectService.LoadProjectLinks().subscribe((data: IProjectLink[]) => {
