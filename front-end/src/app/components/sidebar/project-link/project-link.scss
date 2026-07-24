@@ -55,10 +55,12 @@
     }
 
     .percentage {
+      flex: 0 0 32px;
       font-size: var(--body-font-size-sm);
       letter-spacing: var(--btn-letter-spacing);
       color: inherit;
       white-space: nowrap;
+      text-align: right;
     }
   }
 }
